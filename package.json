@@ -1,0 +1,27 @@
+{
+  "name": "typescript-contained",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "compile": "tsc",
+    "compile:watch": "tsc --watch",
+    "debug": "concurrently --kill-others --names \"compiler,server\" \"npm run compile:watch\" \"npm run serve:watch\"",
+    "serve": "node ./dist/main.js",
+    "serve:watch": "nodemon --watch ./dist --inspect=0.0.0.0:9229 ./dist/main.js",
+    "start": "npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Byron Varberg",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/hapi__hapi": "^19.0.4",
+    "@types/node": "^14.0.25",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^19.2.0"
+  }
+}

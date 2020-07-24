@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  server:
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+  # debug-server:
+  #   build: .
+  #   command: npm run debug
+  #   volumes:
+  #     - .:/usr/src/app
+  #   ports:
+  #     - "3000:3000"
+  #     - "9229:9229"
+  #   env_file:
+  #     - .env
