@@ -2,7 +2,7 @@
   "name": "typescript-contained",
   "version": "0.1.0",
   "description": "",
-  "main": "server.js",
+  "main": "./dist/main.js",
   "scripts": {
     "compile": "tsc",
     "compile:watch": "tsc --watch",

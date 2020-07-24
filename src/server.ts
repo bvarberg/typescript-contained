@@ -9,6 +9,6 @@ server.route({
   method: 'GET',
   path: '/',
   handler: function (request, h) {
-    return 'Hello container!';
+    return 'Hello debugger!';
   }
 });

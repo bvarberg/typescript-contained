@@ -1,3 +1,18 @@
+# Dependencies
 node_modules
+
+# Generated output
 dist
+
+# Environment configuration files
 .env
+
+# ---
+# WARNING: While it is generally recommended one should not commit IDE
+# configurations, this project shares it intentionally because the debugging
+# configuration with Docker + docker-compose isn't obvious.
+#
+# Modify with shared use in mind.
+
+# Ensure .vscode configuration is included
+!.vscode
