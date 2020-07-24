@@ -1,19 +1,17 @@
 # typescript-contained
 
-Goals:
+## Goals
 
-1. TypeScript => JavaScript => Docker container running Hapi.js server
-1. docker-compose service watching TS files for changes, recompile -> docker-compose service watching JS files for changes, restart server
-  1. Bonus: Server exposes debug port for VS Code to attach to
+- [x] TypeScript => JavaScript => Docker container running Hapi.js server
+- [x] Watch for code changes, recompile, restart server
+- [x] Attach a VS Code debugger to the running container, so we can inspect as it runs
 
-Progress:
+## Value
 
-- [x] Docker-based compilation pipeline
-- [x] Watching for changes (local development support)
-- [ ] Debug with VS Code
-- [ ] Multi-step build pipeline? (Apply Node.js/Docker production suggestions)
+- Shared development environment for all developers
+- Portable product (container) can be run on any platform that supports Docker
 
-# Caveats
+## Caveats
 
 > Remember: The container and your local file system are linked through the
 > `docker-compose.yml` configuration.
