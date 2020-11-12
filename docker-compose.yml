@@ -2,11 +2,24 @@ version: "3.8"
 
 services:
   server:
-    build: .
+    build:
+      context: ./server
+      dockerfile: Dockerfile
     command: npm start
     volumes:
-      - .:/usr/src/app
+      - ./server:/usr/src/server
     ports:
       - "3000:3000"
     env_file:
-      - .env
+      - ./server/.env
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    command: npm start
+    volumes:
+      - ./client:/usr/src/client
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./client/.env

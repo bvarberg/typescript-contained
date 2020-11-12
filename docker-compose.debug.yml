@@ -1,13 +1,36 @@
 version: "3.8"
 
 services:
-  debug-server:
-    build: .
+  debug-client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
     command: npm run debug
+    stdin_open: true
     volumes:
-      - .:/usr/src/app
+      - /usr/src/client/node_modules
+      - /usr/src/client/dist
+    networks:
+      - public
     ports:
       - "3000:3000"
+    env_file:
+      - ./client/.env
+  debug-server:
+    build:
+      context: ./server
+      target: dev
+      dockerfile: Dockerfile
+    command: npm run debug
+    volumes:
+      - /usr/src/server/node_modules
+      - /usr/src/server/dist
+    networks:
+      - public
+    ports:
+      - "4000:4000"
       - "9229:9229"
     env_file:
-      - .env
+      - ./server/.env
+networks:
+  public:
